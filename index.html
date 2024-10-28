@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - date selection</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Booking Details - MALIKU TAXI</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4; /* Light gray background */
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="date"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background-color: #FF6347; /* Red background */
+            color: white;
+            padding: 10px; /* Reduced padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 3cm; /* Set the width to 3 cm */
+            margin: 20px auto; /* Center the button with margin */
+            text-align: center; /* Center the text inside the button */
+            font-size: 0.9em; /* Slightly smaller font size */
+        }
+
+        .submit-button:hover {
+            background-color: #FF4500; /* Darker red on hover */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center the buttons */
+            margin-top: 20px;
+            gap: 10px; /* Space between the buttons */
+        }
+
+        .back-button,
+        .home-button {
+            padding: 10px 15px;
+            background-color: #1E90FF; /* Light blue background */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em; /* Slightly smaller font size */
+        }
+
+        .back-button:hover,
+        .home-button:hover {
+            background-color: #5CACEE; /* Lighter blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Booking Details</h1>
+
+    <form class="booking-form">
+        <!-- Name Input -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <!-- Phone Number Input -->
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter your phone number" required>
+
+        <!-- Date Picker -->
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" required>
+
+        <!-- Time Slot Selection -->
+        <label for="time">Select Time:</label>
+        <select id="time" required>
+            <option value="">-- Select Time --</option>
+            <!-- Time slots for every 30 minutes -->
+            <script>
+                // JavaScript to generate time slots
+                const timeSelect = document.getElementById('time');
+                const startHour = 0; // Start from 00:00
+                const endHour = 23; // End at 23:59
+
+                for (let hour = startHour; hour <= endHour; hour++) {
+                    for (let minute = 0; minute < 60; minute += 30) {
+                        const formattedHour = hour < 10 ? `0${hour}` : hour;
+                        const formattedMinute = minute === 0 ? '00' : '30';
+                        const timeValue = `${formattedHour}:${formattedMinute}`;
+                        const option = document.createElement('option');
+                        option.value = timeValue;
+                        option.textContent = `${formattedHour}:${formattedMinute}`;
+                        timeSelect.appendChild(option);
+                    }
+                }
+            </script>
+        </select>
+
+        <!-- Pickup Location -->
+        <label for="pickup-location">Pickup Location:</label>
+        <input type="text" id="pickup-location" placeholder="Type pickup location" required>
+
+        <!-- Drop-off Location -->
+        <label for="dropoff-location">Drop-off Location:</label>
+        <input type="text" id="dropoff-location" placeholder="Type drop-off location" required>
+
+        <!-- Submit Button with Updated Link -->
+        <a href="https://irfanmohdt.github.io/conformation/" class="submit-button">Confirm Booking</a>
+    </form>
+
+    <div class="button-container">
+        <a href="https://irfanmohdt.github.io/booking/" class="back-button">Back</a>
+        <a href="https://irfanmohdt.github.io/Maliku-Taxi/" class="home-button">Back to Home</a>
+    </div>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
